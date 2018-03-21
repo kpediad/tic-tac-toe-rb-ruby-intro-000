@@ -39,3 +39,18 @@ def winner(board)
     return board[won?(board)[0]]
   end
 end
+
+def turn_count(board)
+  count = 0
+  board.each do |place|
+    if place == "X" || place == "O"
+      count += 1
+    end
+  end
+  return count
+end
+
+def current_player(board)
+  turn_count(board) % 2 == 0 ? "X" : "O"
+end
+
